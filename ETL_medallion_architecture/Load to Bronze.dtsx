@@ -11,16 +11,75 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Load to Bronze"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{BF84E70B-B695-48AE-9D1B-1C67BF130CF4}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{F70F4D62-5338-4F92-886E-8A2AE42533B7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[localhost.DataWarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{79119E42-B8A8-4DBE-89F0-8D76F0A7F097}"
+      DTS:ObjectName="localhost.DataWarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DataWarehouse;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Load to Bronze-{79119E42-B8A8-4DBE-89F0-8D76F0A7F097}localhost.DataWarehouse;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[source_cust_az12]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6ADA2943-3248-4977-A032-49AB826747A1}"
+      DTS:ObjectName="source_cust_az12">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DATA WAREHOUSE\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CID"
+              DTS:DTSID="{C2ACC207-3B16-40DD-B3F2-C85D37CE1BBF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BDATE"
+              DTS:DTSID="{AF9EABEB-D09E-40D7-B3BC-19F30214FBFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GEN"
+              DTS:DTSID="{9C1E88A1-C72E-452C-AA09-32DE7C1C209F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[source_cust_info]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{BC58ECBD-8259-47BD-BCA0-543A26D75654}"
-      DTS:ObjectName="Flat File Connection Manager">
+      DTS:ObjectName="source_cust_info">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -100,10 +159,48 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:refId="Package.ConnectionManagers[source_loc_a101]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F4D87A84-3343-4E9D-97DE-6B414052467A}"
+      DTS:ObjectName="source_loc_a101">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DATA WAREHOUSE\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CID"
+              DTS:DTSID="{06B45EF8-4B76-4210-B3DD-16F62F96F3E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CNTRY"
+              DTS:DTSID="{BC01D0ED-D5AD-4684-B03A-C52744A2CDD2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[source_prd_info]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{B7001CD9-5252-459E-969D-D946BED49452}"
-      DTS:ObjectName="Flat File Connection Manager 1">
+      DTS:ObjectName="source_prd_info">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -183,10 +280,66 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+      DTS:refId="Package.ConnectionManagers[source_px_cat_g1v2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{28A39481-08FC-485B-A182-4B086EBE47C4}"
+      DTS:ObjectName="source_px_cat_g1v2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\DATA WAREHOUSE\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID"
+              DTS:DTSID="{343F34DF-CB95-434F-8611-B8AD1722E8F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CAT"
+              DTS:DTSID="{5AA0F55C-6F9F-4D7F-BC0F-E2798B710768}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SUBCAT"
+              DTS:DTSID="{2101E9E0-BFB6-4A32-B7C0-1F9F584351D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MAINTENANCE"
+              DTS:DTSID="{4D670626-312B-4318-9F74-DD82A998D8D7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[source_sales_details]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{ECD74F15-2875-43A2-9A99-2B2047B5A0D2}"
-      DTS:ObjectName="Flat File Connection Manager 2">
+      DTS:ObjectName="source_sales_details">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -278,159 +431,6 @@
               DTS:TextQualified="True"
               DTS:ObjectName="sls_price"
               DTS:DTSID="{8FF6E9DB-C512-4BC4-AD53-A9F47A52B42B}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.DataWarehouse]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{79119E42-B8A8-4DBE-89F0-8D76F0A7F097}"
-      DTS:ObjectName="localhost.DataWarehouse">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DataWarehouse;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Load to Bronze-{79119E42-B8A8-4DBE-89F0-8D76F0A7F097}localhost.DataWarehouse;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[source_cust_az12]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{6ADA2943-3248-4977-A032-49AB826747A1}"
-      DTS:ObjectName="source_cust_az12">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\DATA WAREHOUSE\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\CUST_AZ12.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="CID"
-              DTS:DTSID="{C2ACC207-3B16-40DD-B3F2-C85D37CE1BBF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="BDATE"
-              DTS:DTSID="{AF9EABEB-D09E-40D7-B3BC-19F30214FBFF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="GEN"
-              DTS:DTSID="{9C1E88A1-C72E-452C-AA09-32DE7C1C209F}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[source_loc_a101]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{F4D87A84-3343-4E9D-97DE-6B414052467A}"
-      DTS:ObjectName="source_loc_a101">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\DATA WAREHOUSE\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\LOC_A101.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="CID"
-              DTS:DTSID="{06B45EF8-4B76-4210-B3DD-16F62F96F3E1}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="CNTRY"
-              DTS:DTSID="{BC01D0ED-D5AD-4684-B03A-C52744A2CDD2}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[source_px_cat_g1v2]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{28A39481-08FC-485B-A182-4B086EBE47C4}"
-      DTS:ObjectName="source_px_cat_g1v2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\DATA WAREHOUSE\sql-data-warehouse-project\sql-data-warehouse-project\datasets\source_erp\PX_CAT_G1V2.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ID"
-              DTS:DTSID="{343F34DF-CB95-434F-8611-B8AD1722E8F9}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="CAT"
-              DTS:DTSID="{5AA0F55C-6F9F-4D7F-BC0F-E2798B710768}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="SUBCAT"
-              DTS:DTSID="{2101E9E0-BFB6-4A32-B7C0-1F9F584351D8}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="MAINTENANCE"
-              DTS:DTSID="{4D670626-312B-4318-9F74-DD82A998D8D7}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1135,8 +1135,8 @@
               <connections>
                 <connection
                   refId="Package\cust_info\cust_info.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[source_cust_info]"
+                  connectionManagerRefId="Package.ConnectionManagers[source_cust_info]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -2179,8 +2179,8 @@
               <connections>
                 <connection
                   refId="Package\prd_info\prd_info csv.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerID="Package.ConnectionManagers[source_prd_info]"
+                  connectionManagerRefId="Package.ConnectionManagers[source_prd_info]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -3335,8 +3335,8 @@
               <connections>
                 <connection
                   refId="Package\sales_details\sales_details.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  connectionManagerID="Package.ConnectionManagers[source_sales_details]"
+                  connectionManagerRefId="Package.ConnectionManagers[source_sales_details]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
