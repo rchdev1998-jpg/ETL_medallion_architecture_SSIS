@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Load to Bronze"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{F70F4D62-5338-4F92-886E-8A2AE42533B7}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{36BD90AE-BF66-4824-93D6-189DEB560088}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3790,7 +3790,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate_cust_az12"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3807,7 +3807,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate_cust_info"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3824,7 +3824,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate_loc_a101"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3841,7 +3841,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate_prd_info"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3858,7 +3858,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate_px_cat_g1v2"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3875,7 +3875,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="truncate_sales_details"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3947,13 +3947,53 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="129,42"
+          Id="Package\cust_az12"
+          TopLeft="764,271" />
+        <NodeLayout
           Size="123,42"
           Id="Package\cust_info"
           TopLeft="149,269" />
         <NodeLayout
+          Size="124,42"
+          Id="Package\loc_a101"
+          TopLeft="976,271" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\prd_info"
+          TopLeft="352,268" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\px_cat_g1v2"
+          TopLeft="1186,273" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\sales_details"
+          TopLeft="544,271" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\truncate_cust_az12"
+          TopLeft="746,181" />
+        <NodeLayout
           Size="169,42"
           Id="Package\truncate_cust_info"
           TopLeft="128,179" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\truncate_loc_a101"
+          TopLeft="954,181" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\truncate_prd_info"
+          TopLeft="329,179" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\truncate_px_cat_g1v2"
+          TopLeft="1163,178" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\truncate_sales_details"
+          TopLeft="520,182" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="211.5,221">
@@ -3976,14 +4016,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="119,42"
-          Id="Package\prd_info"
-          TopLeft="352,268" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\truncate_prd_info"
-          TopLeft="329,179" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="411.5,221">
@@ -4006,14 +4038,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="143,42"
-          Id="Package\sales_details"
-          TopLeft="544,271" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\truncate_sales_details"
-          TopLeft="520,182" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="615,224">
@@ -4036,14 +4060,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129,42"
-          Id="Package\cust_az12"
-          TopLeft="764,271" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\truncate_cust_az12"
-          TopLeft="746,181" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="831,223">
@@ -4066,14 +4082,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="124,42"
-          Id="Package\loc_a101"
-          TopLeft="976,271" />
-        <NodeLayout
-          Size="169,42"
-          Id="Package\truncate_loc_a101"
-          TopLeft="954,181" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="1038.25,223">
@@ -4096,28 +4104,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="141,42"
-          Id="Package\px_cat_g1v2"
-          TopLeft="1192,280" />
-        <NodeLayout
-          Size="187,42"
-          Id="Package\truncate_px_cat_g1v2"
-          TopLeft="1163,178" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="1259.5,220">
+          TopLeft="1256.5,220">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,52.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4129,6 +4129,124 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\cust_az12">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129,42"
+          Id="Package\cust_az12\cust_az12"
+          TopLeft="430,154" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\cust_az12\bronze cust_az12"
+          TopLeft="319,264" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\cust_az12\ssis_bad_data"
+          TopLeft="518,265" />
+        <EdgeLayout
+          Id="Package\cust_az12.Paths[Flat File Source Error Output]"
+          TopLeft="514.666666666667,196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.3333333333334,69"
+              Start="0,0"
+              End="78.3333333333334,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1071975497703" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1071975497703"
+                    Point2="0,28.1071975497703"
+                    Point3="4,28.1071975497703" />
+                  <mssgle:LineSegment
+                    End="74.3333333333334,28.1071975497703" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.3333333333334,28.1071975497703"
+                    Point2="78.3333333333334,28.1071975497703"
+                    Point3="78.3333333333334,32.1071975497703" />
+                  <mssgle:LineSegment
+                    End="78.3333333333334,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.4597200520833,33.1071975497703,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\cust_az12.Paths[Flat File Source Output]"
+          TopLeft="474.333333333333,196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-72.3333333333334,68"
+              Start="0,0"
+              End="-72.3333333333334,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6998468606432" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6998468606432"
+                    Point2="0,27.6998468606432"
+                    Point3="-4,27.6998468606432" />
+                  <mssgle:LineSegment
+                    End="-68.3333333333334,27.6998468606432" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-68.3333333333334,27.6998468606432"
+                    Point2="-72.3333333333334,27.6998468606432"
+                    Point3="-72.3333333333334,31.6998468606432" />
+                  <mssgle:LineSegment
+                    End="-72.3333333333334,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\cust_az12\bronze cust_az12">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\cust_az12\ssis_bad_data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\cust_info">
     <LayoutInfo>
@@ -4142,6 +4260,10 @@
           Size="160,42"
           Id="Package\cust_info\bronze cust_info"
           TopLeft="310,240" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\cust_info\ssis_bad_data"
+          TopLeft="509,242" />
         <EdgeLayout
           Id="Package\cust_info.Paths[Flat File Source Output]"
           TopLeft="473.333333333333,177">
@@ -4173,13 +4295,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\cust_info\ssis_bad_data"
-          TopLeft="509,242" />
         <EdgeLayout
           Id="Package\cust_info.Paths[Flat File Source Error Output]"
           TopLeft="511.666666666667,177">
@@ -4246,6 +4366,124 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\loc_a101">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\loc_a101\ssis_bad_data"
+          TopLeft="549,240" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\loc_a101\loc_a101"
+          TopLeft="477,144" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\loc_a101\bronze erp_loc_a101"
+          TopLeft="330,237" />
+        <EdgeLayout
+          Id="Package\loc_a101.Paths[Flat File Source Output]"
+          TopLeft="519.666666666667,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.6666666666666,51"
+              Start="0,0"
+              End="-98.6666666666666,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7898089171974" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7898089171974"
+                    Point2="0,20.7898089171974"
+                    Point3="-4,20.7898089171974" />
+                  <mssgle:LineSegment
+                    End="-94.6666666666666,20.7898089171974" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.6666666666666,20.7898089171974"
+                    Point2="-98.6666666666666,20.7898089171974"
+                    Point3="-98.6666666666666,24.7898089171974" />
+                  <mssgle:LineSegment
+                    End="-98.6666666666666,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\loc_a101.Paths[Flat File Source Error Output]"
+          TopLeft="558.333333333333,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.6666666666666,54"
+              Start="0,0"
+              End="65.6666666666666,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.0127388535032" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.0127388535032"
+                    Point2="0,22.0127388535032"
+                    Point3="4,22.0127388535032" />
+                  <mssgle:LineSegment
+                    End="61.6666666666666,22.0127388535032" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.6666666666666,22.0127388535032"
+                    Point2="65.6666666666666,22.0127388535032"
+                    Point3="65.6666666666666,26.0127388535032" />
+                  <mssgle:LineSegment
+                    End="65.6666666666666,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.7930533854167,27.0127388535032,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\loc_a101\ssis_bad_data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\loc_a101\bronze erp_loc_a101">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\prd_info">
     <LayoutInfo>
       <GraphLayout
@@ -4258,6 +4496,10 @@
           Size="155,42"
           Id="Package\prd_info\bronze prd_info"
           TopLeft="281,210" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\prd_info\ssis_bad_data"
+          TopLeft="464,211" />
         <EdgeLayout
           Id="Package\prd_info.Paths[Flat File Source Output]"
           TopLeft="433.333333333333,162">
@@ -4289,13 +4531,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\prd_info\ssis_bad_data"
-          TopLeft="464,211" />
         <EdgeLayout
           Id="Package\prd_info.Paths[Flat File Source Error Output]"
           TopLeft="476.666666666667,162">
@@ -4362,10 +4602,130 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\px_cat_g1v2">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="141,42"
+          Id="Package\px_cat_g1v2\px_cat_g1v2"
+          TopLeft="462.5,136.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\px_cat_g1v2\ssis_bad_data"
+          TopLeft="565,230" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\px_cat_g1v2\bronze px_cat_g1v2"
+          TopLeft="331,229" />
+        <EdgeLayout
+          Id="Package\px_cat_g1v2.Paths[Flat File Source Output]"
+          TopLeft="510.833333333333,178.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-90.8333333333333,50.5"
+              Start="0,0"
+              End="-90.8333333333333,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5399719495091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5399719495091"
+                    Point2="0,20.5399719495091"
+                    Point3="-4,20.5399719495091" />
+                  <mssgle:LineSegment
+                    End="-86.8333333333333,20.5399719495091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-86.8333333333333,20.5399719495091"
+                    Point2="-90.8333333333333,20.5399719495091"
+                    Point3="-90.8333333333333,24.5399719495091" />
+                  <mssgle:LineSegment
+                    End="-90.8333333333333,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\px_cat_g1v2.Paths[Flat File Source Error Output]"
+          TopLeft="555.166666666667,178.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.8333333333334,51.5"
+              Start="0,0"
+              End="84.8333333333334,44">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9467040673212" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.9467040673212"
+                    Point2="0,20.9467040673212"
+                    Point3="4,20.9467040673212" />
+                  <mssgle:LineSegment
+                    End="80.8333333333334,20.9467040673212" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80.8333333333334,20.9467040673212"
+                    Point2="84.8333333333334,20.9467040673212"
+                    Point3="84.8333333333334,24.9467040673212" />
+                  <mssgle:LineSegment
+                    End="84.8333333333334,44" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.2097200520833,25.9467040673212,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\px_cat_g1v2\ssis_bad_data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\px_cat_g1v2\bronze px_cat_g1v2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\sales_details">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\sales_details\ssis_bad_data"
+          TopLeft="547,227" />
         <NodeLayout
           Size="143,42"
           Id="Package\sales_details\sales_details"
@@ -4405,13 +4765,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\sales_details\ssis_bad_data"
-          TopLeft="547,227" />
         <EdgeLayout
           Id="Package\sales_details.Paths[Flat File Source Error Output]"
           TopLeft="551,162">
@@ -4452,19 +4810,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\sales_details\bronze sales_details">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\sales_details\ssis_bad_data">
     <Properties>
       <Property>
@@ -4477,343 +4822,8 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\cust_az12">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="129,42"
-          Id="Package\cust_az12\cust_az12"
-          TopLeft="430,154" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\cust_az12\bronze cust_az12"
-          TopLeft="319,264" />
-        <EdgeLayout
-          Id="Package\cust_az12.Paths[Flat File Source Output]"
-          TopLeft="474.333333333333,196">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-72.3333333333334,68"
-              Start="0,0"
-              End="-72.3333333333334,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.6998468606432" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.6998468606432"
-                    Point2="0,27.6998468606432"
-                    Point3="-4,27.6998468606432" />
-                  <mssgle:LineSegment
-                    End="-68.3333333333334,27.6998468606432" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-68.3333333333334,27.6998468606432"
-                    Point2="-72.3333333333334,27.6998468606432"
-                    Point3="-72.3333333333334,31.6998468606432" />
-                  <mssgle:LineSegment
-                    End="-72.3333333333334,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\cust_az12\ssis_bad_data"
-          TopLeft="518,265" />
-        <EdgeLayout
-          Id="Package\cust_az12.Paths[Flat File Source Error Output]"
-          TopLeft="514.666666666667,196">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="78.3333333333334,69"
-              Start="0,0"
-              End="78.3333333333334,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.1071975497703" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.1071975497703"
-                    Point2="0,28.1071975497703"
-                    Point3="4,28.1071975497703" />
-                  <mssgle:LineSegment
-                    End="74.3333333333334,28.1071975497703" />
-                  <mssgle:CubicBezierSegment
-                    Point1="74.3333333333334,28.1071975497703"
-                    Point2="78.3333333333334,28.1071975497703"
-                    Point3="78.3333333333334,32.1071975497703" />
-                  <mssgle:LineSegment
-                    End="78.3333333333334,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-24.4597200520833,33.1071975497703,127.2527734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\cust_az12\bronze cust_az12">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\cust_az12\ssis_bad_data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\loc_a101">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="124,42"
-          Id="Package\loc_a101\loc_a101"
-          TopLeft="477,144" />
-        <NodeLayout
-          Size="182,42"
-          Id="Package\loc_a101\bronze erp_loc_a101"
-          TopLeft="330,237" />
-        <EdgeLayout
-          Id="Package\loc_a101.Paths[Flat File Source Output]"
-          TopLeft="519.666666666667,186">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-98.6666666666666,51"
-              Start="0,0"
-              End="-98.6666666666666,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.7898089171974" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.7898089171974"
-                    Point2="0,20.7898089171974"
-                    Point3="-4,20.7898089171974" />
-                  <mssgle:LineSegment
-                    End="-94.6666666666666,20.7898089171974" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-94.6666666666666,20.7898089171974"
-                    Point2="-98.6666666666666,20.7898089171974"
-                    Point3="-98.6666666666666,24.7898089171974" />
-                  <mssgle:LineSegment
-                    End="-98.6666666666666,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\loc_a101\ssis_bad_data"
-          TopLeft="549,240" />
-        <EdgeLayout
-          Id="Package\loc_a101.Paths[Flat File Source Error Output]"
-          TopLeft="558.333333333333,186">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="65.6666666666666,54"
-              Start="0,0"
-              End="65.6666666666666,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.0127388535032" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.0127388535032"
-                    Point2="0,22.0127388535032"
-                    Point3="4,22.0127388535032" />
-                  <mssgle:LineSegment
-                    End="61.6666666666666,22.0127388535032" />
-                  <mssgle:CubicBezierSegment
-                    Point1="61.6666666666666,22.0127388535032"
-                    Point2="65.6666666666666,22.0127388535032"
-                    Point3="65.6666666666666,26.0127388535032" />
-                  <mssgle:LineSegment
-                    End="65.6666666666666,46.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.7930533854167,27.0127388535032,127.2527734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\loc_a101\bronze erp_loc_a101">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\loc_a101\ssis_bad_data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\px_cat_g1v2">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="141,42"
-          Id="Package\px_cat_g1v2\px_cat_g1v2"
-          TopLeft="471.5,135.5" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\px_cat_g1v2\bronze px_cat_g1v2"
-          TopLeft="331,229" />
-        <EdgeLayout
-          Id="Package\px_cat_g1v2.Paths[Flat File Source Output]"
-          TopLeft="519.833333333333,177.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-99.8333333333334,51.5"
-              Start="0,0"
-              End="-99.8333333333334,44">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.9467040673212" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.9467040673212"
-                    Point2="0,20.9467040673212"
-                    Point3="-4,20.9467040673212" />
-                  <mssgle:LineSegment
-                    End="-95.8333333333334,20.9467040673212" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-95.8333333333334,20.9467040673212"
-                    Point2="-99.8333333333334,20.9467040673212"
-                    Point3="-99.8333333333334,24.9467040673212" />
-                  <mssgle:LineSegment
-                    End="-99.8333333333334,44" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\px_cat_g1v2\ssis_bad_data"
-          TopLeft="565,230" />
-        <EdgeLayout
-          Id="Package\px_cat_g1v2.Paths[Flat File Source Error Output]"
-          TopLeft="564.166666666667,177.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="75.8333333333334,52.5"
-              Start="0,0"
-              End="75.8333333333334,45">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.3534361851333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.3534361851333"
-                    Point2="0,21.3534361851333"
-                    Point3="4,21.3534361851333" />
-                  <mssgle:LineSegment
-                    End="71.8333333333334,21.3534361851333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="71.8333333333334,21.3534361851333"
-                    Point2="75.8333333333334,21.3534361851333"
-                    Point3="75.8333333333334,25.3534361851333" />
-                  <mssgle:LineSegment
-                    End="75.8333333333334,45" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.7097200520833,26.3534361851333,127.2527734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\px_cat_g1v2\bronze px_cat_g1v2">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\px_cat_g1v2\ssis_bad_data">
+    design-time-name="Package\sales_details\bronze sales_details">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
