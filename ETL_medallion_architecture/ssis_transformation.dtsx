@@ -1,0 +1,1350 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/7/2026 12:15:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RCH-FACILITY1"
+  DTS:CreatorName="RCH-FACILITY1\HR MANAGER"
+  DTS:DTSID="{25456A89-F644-4807-87F5-701A899B7F7C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{7DB4BC20-B9DA-4496-8099-A4B8979D9461}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\crm_cust_info"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F1DC671B-9D2E-45A2-B176-4ADC4848AB76}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="crm_cust_info"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\crm_cust_info\bronze crm_cust_info"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="bronze crm_cust_info"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[bronze].[crm_cust_info]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\crm_cust_info\bronze crm_cust_info.Connections[OleDbConnection]"
+                  connectionManagerID="{D69319F6-2B9A-4DDA-940D-DADADE124545}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[cm_cust_info]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_id]"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_id]"
+                      name="cst_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_key]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_key]"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_key]"
+                      name="cst_key"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_firstname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_firstname]"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_firstname]"
+                      name="cst_firstname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_lastname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_lastname]"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_lastname]"
+                      name="cst_lastname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_marital_status]"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_marital_status]"
+                      name="cst_marital_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_gndr]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_gndr]"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_gndr]"
+                      name="cst_gndr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_create_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_create_date]"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_create_date]"
+                      name="cst_create_date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cst_id" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_key]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cst_key" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_firstname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cst_firstname" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_lastname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cst_lastname" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cst_marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_gndr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cst_gndr" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].ExternalColumns[cst_create_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cst_create_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_id]"
+                      name="cst_id" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_key]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_key]"
+                      name="cst_key" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_firstname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_firstname]"
+                      name="cst_firstname" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_lastname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_lastname]"
+                      name="cst_lastname" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_marital_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_marital_status]"
+                      name="cst_marital_status" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_gndr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_gndr]"
+                      name="cst_gndr" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_create_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[cst_create_date]"
+                      name="cst_create_date" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\crm_cust_info\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input].Columns[cst_key]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_key"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_key]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input].Columns[cst_firstname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_firstname"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_firstname]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input].Columns[cst_lastname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_lastname"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_lastname]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input].Columns[cst_marital_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_marital_status"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_marital_status]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input].Columns[cst_gndr]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_gndr"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_gndr]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input].Columns[cst_create_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_create_date"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_create_date]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input].Columns[cst_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_id"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_key_nvarchar]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_key_nvarchar]"
+                      name="to_cst_key_nvarchar"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_key]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_firstname_nvarchar]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_firstname_nvarchar]"
+                      name="to_cst_firstname_nvarchar"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_firstname]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_lastname_nvarchar]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_lastname_nvarchar]"
+                      name="to_cst_lastname_nvarchar"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_lastname]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_marital_status_nvarchar]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_marital_status_nvarchar]"
+                      name="to_cst_marital_status_nvarchar"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_marital_status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_gndr_nvarchar]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="50"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_gndr_nvarchar]"
+                      name="to_cst_gndr_nvarchar"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_gndr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_create_date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_create_date]"
+                      name="to_cst_create_date"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_create_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_id_int]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_id_int]"
+                      name="to_cst_id_int"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\crm_cust_info\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\crm_cust_info\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\crm_cust_info\Derived Column.Inputs[Derived Column Input].Columns[cst_firstname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_firstname"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_firstname]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_firstname]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(cst_firstname)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\crm_cust_info\Derived Column.Inputs[Derived Column Input].Columns[cst_lastname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_lastname"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_lastname]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_lastname]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(cst_lastname)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\crm_cust_info\Derived Column.Inputs[Derived Column Input].Columns[cst_marital_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_marital_status"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_marital_status]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_marital_status]} == "S" ? "Single" : #{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_marital_status]} == "M" ? "Married" : "n/a"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">cst_marital_status == "S" ? "Single" : cst_marital_status == "M" ? "Married" : "n/a"</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\crm_cust_info\Derived Column.Inputs[Derived Column Input].Columns[cst_gndr]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cst_gndr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_gndr]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_gndr]} == "F" ? "Female" : #{Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output].Columns[cst_gndr]} == "M" ? "Male" : "n/a"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">cst_gndr == "F" ? "Female" : cst_gndr == "M" ? "Male" : "n/a"</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\crm_cust_info\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Output].Columns[date_created]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Output].Columns[date_created]"
+                      name="date_created"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Output].Columns[date_deactivated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Output].Columns[date_deactivated]"
+                      name="date_deactivated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">NULL(DT_DBTIMESTAMP)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">NULL(DT_DBTIMESTAMP)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Output].Columns[is_active]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Output].Columns[is_active]"
+                      name="is_active"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\crm_cust_info\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\crm_cust_info\error date"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="error date"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[silver].[etl_errors]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\crm_cust_info\error date.Connections[OleDbConnection]"
+                  connectionManagerID="{D69319F6-2B9A-4DDA-940D-DADADE124545}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[cm_cust_info]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      codePage="1252"
+                      dataType="text"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      codePage="1252"
+                      dataType="text"
+                      name="ErrorColumn" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input].ExternalColumns[error_date]"
+                      dataType="dbTimeStamp"
+                      name="error_date" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input].ExternalColumns[table_id]"
+                      dataType="i4"
+                      name="table_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\crm_cust_info\error date.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\crm_cust_info\error date.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\error date.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\error date.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\error date.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\crm_cust_info\silver crm_cust_info"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="silver crm_cust_info"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[silver].[crm_cust_info]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\crm_cust_info\silver crm_cust_info.Connections[OleDbConnection]"
+                  connectionManagerID="{D69319F6-2B9A-4DDA-940D-DADADE124545}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[cm_cust_info]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].Columns[to_cst_key_nvarchar]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="to_cst_key_nvarchar"
+                      externalMetadataColumnId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_key]"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_key_nvarchar]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].Columns[to_cst_firstname_nvarchar]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="to_cst_firstname_nvarchar"
+                      externalMetadataColumnId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_firstname]"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_firstname_nvarchar]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].Columns[to_cst_lastname_nvarchar]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="to_cst_lastname_nvarchar"
+                      externalMetadataColumnId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_lastname]"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_lastname_nvarchar]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].Columns[to_cst_marital_status_nvarchar]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="to_cst_marital_status_nvarchar"
+                      externalMetadataColumnId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_marital_status]"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_marital_status_nvarchar]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].Columns[to_cst_gndr_nvarchar]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="to_cst_gndr_nvarchar"
+                      externalMetadataColumnId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_gndr]"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_gndr_nvarchar]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].Columns[to_cst_create_date]"
+                      cachedDataType="date"
+                      cachedName="to_cst_create_date"
+                      externalMetadataColumnId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_create_date]"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_create_date]" />
+                    <inputColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].Columns[to_cst_id_int]"
+                      cachedDataType="i4"
+                      cachedName="to_cst_id_int"
+                      externalMetadataColumnId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_id]"
+                      lineageId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output].Columns[to_cst_id_int]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_id]"
+                      dataType="i4"
+                      name="cst_id" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_key]"
+                      dataType="wstr"
+                      length="50"
+                      name="cst_key" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_firstname]"
+                      dataType="wstr"
+                      length="50"
+                      name="cst_firstname" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_lastname]"
+                      dataType="wstr"
+                      length="50"
+                      name="cst_lastname" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_marital_status]"
+                      dataType="wstr"
+                      length="50"
+                      name="cst_marital_status" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_gndr]"
+                      dataType="wstr"
+                      length="50"
+                      name="cst_gndr" />
+                    <externalMetadataColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input].ExternalColumns[cst_create_date]"
+                      dataType="dbDate"
+                      name="cst_create_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\crm_cust_info\silver crm_cust_info.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\silver crm_cust_info.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\crm_cust_info\silver crm_cust_info.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\crm_cust_info\silver crm_cust_info.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\crm_cust_info.Paths[Data Conversion Error Output]"
+              endId="Package\crm_cust_info\error date.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\crm_cust_info.Paths[Data Conversion Output]"
+              endId="Package\crm_cust_info\silver crm_cust_info.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\crm_cust_info\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\crm_cust_info.Paths[Derived Column Output]"
+              endId="Package\crm_cust_info\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\crm_cust_info\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\crm_cust_info.Paths[OLE DB Source Output]"
+              endId="Package\crm_cust_info\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\crm_cust_info\bronze crm_cust_info.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BECB4A8C-F423-428E-9D48-84F214FAFA77}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D69319F6-2B9A-4DDA-940D-DADADE124545}"
+          SQLTask:SqlStatementSource="truncate table silver.crm_cust_info" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D17877ED-9C2D-4835-BF13-D553CD767AF1}"
+      DTS:From="Package\truncate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\crm_cust_info" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="147,42"
+          Id="Package\crm_cust_info"
+          TopLeft="529,265" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\truncate"
+          TopLeft="541,185" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="601.5,227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\crm_cust_info">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="184,42"
+          Id="Package\crm_cust_info\bronze crm_cust_info"
+          TopLeft="466,159" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\crm_cust_info\Derived Column"
+          TopLeft="480,246" />
+        <EdgeLayout
+          Id="Package\crm_cust_info.Paths[OLE DB Source Output]"
+          TopLeft="558.5,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\crm_cust_info\silver crm_cust_info"
+          TopLeft="339,436" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\crm_cust_info\Data Conversion"
+          TopLeft="486,333" />
+        <EdgeLayout
+          Id="Package\crm_cust_info.Paths[Derived Column Output]"
+          TopLeft="562.75,288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\crm_cust_info.Paths[Data Conversion Output]"
+          TopLeft="541,375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-114,61"
+              Start="0,0"
+              End="-114,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.760147601476" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.760147601476"
+                    Point2="0,24.760147601476"
+                    Point3="-4,24.760147601476" />
+                  <mssgle:LineSegment
+                    End="-110,24.760147601476" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-110,24.760147601476"
+                    Point2="-114,24.760147601476"
+                    Point3="-114,28.760147601476" />
+                  <mssgle:LineSegment
+                    End="-114,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="127,42"
+          Id="Package\crm_cust_info\error date"
+          TopLeft="614,431" />
+        <EdgeLayout
+          Id="Package\crm_cust_info.Paths[Data Conversion Error Output]"
+          TopLeft="592,375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.5,56"
+              Start="0,0"
+              End="85.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.7306273062731" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.7306273062731"
+                    Point2="0,22.7306273062731"
+                    Point3="4,22.7306273062731" />
+                  <mssgle:LineSegment
+                    End="81.5,22.7306273062731" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.5,22.7306273062731"
+                    Point2="85.5,22.7306273062731"
+                    Point3="85.5,26.7306273062731" />
+                  <mssgle:LineSegment
+                    End="85.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.33638671875,27.7306273062731,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\crm_cust_info\bronze crm_cust_info">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\crm_cust_info\silver crm_cust_info">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\crm_cust_info\error date">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
